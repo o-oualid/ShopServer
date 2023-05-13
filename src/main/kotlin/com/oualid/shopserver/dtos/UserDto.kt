@@ -24,3 +24,5 @@ data class UserLoginDto(
     @Email val email: String,
     @NotEmpty val password: String
 )
+
+data class AuthResponseDto(val token: String,val role: String,val ttl: Long)

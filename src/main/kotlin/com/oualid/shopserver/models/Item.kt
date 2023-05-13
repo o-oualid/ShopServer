@@ -7,10 +7,14 @@ import jakarta.persistence.Id
 
 @Entity
 data class Item(
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        val id: Long,
-        val name: String,
-        val price: Double,
-        val description: String
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long,
+    val name: String,
+    val price: Double,
+    val description: String,
+    val image: String,
+    val stock: Int,
+    val category: String,
+    val brand: String
 )

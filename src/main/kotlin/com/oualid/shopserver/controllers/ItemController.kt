@@ -33,9 +33,8 @@ class ItemController(val itemService: ItemService) {
 
     @GetMapping("items/{id}")
     fun getItem(
-        @SortDefault(sort = ["id"])
-        @PageableDefault(size = 20) pageable: Pageable, @PathVariable id: Long
-    ): ResponseEntity<SimplePage<ItemDto>> {
-        return ResponseEntity.ok(itemService.getItem(id, pageable))
+        @PathVariable id: Long
+    ): ResponseEntity<ItemDto> {
+        return ResponseEntity.of(itemService.getItem(id))
     }
 }
